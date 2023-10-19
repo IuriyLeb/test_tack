@@ -11,7 +11,6 @@ def draw_menu(context, menu_name):
     menu = get_object_or_404(MenuItem, name=menu_name, parent=None)
     local_context = {'menu_item': menu}
     requested_url = context['request'].path
-    print(requested_url)
     try:
         active_menu_item = MenuItem.objects.get(url=requested_url)
     except ObjectDoesNotExist:
